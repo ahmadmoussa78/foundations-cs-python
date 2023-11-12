@@ -87,6 +87,11 @@ def displayAllTabs(tabs, indent=""):
       #   json.dump(data, json_file, indent=2)
 
     print("Nested tab opened successfully")
+
+    def clearAllTabs(tabs):  # worst case =>O(1) #Constant
+  tabs.clear()
+  print("All tabs have been cleared")
+  return tabs
     
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
