@@ -9,3 +9,39 @@ def display_Menu():
   print("7. Save Tabs")
   print("8. Import Tabs")
   print("9. Exit")
+
+def main():
+  # data = {}
+  # with open("data.json", "r") as f:
+  #   data = json.load(f)
+  display_Menu()
+  choice = int(input("Enter your choice: "))
+
+  while choice != 9:
+    if choice == 1:
+      openTab()
+    elif choice == 2:
+      closeTab(input("Enter the index of the tab to close: "))
+    elif choice == 3:
+      switchTab(input("Enter the index of the tab to switch to: "))
+    elif choice == 4:
+      displayAllTabs(tabs)
+    elif choice == 5:
+      openNestedTab(tabs)
+    elif choice == 6:
+      clearAllTabs(tabs)
+    elif choice == 7:
+      file_path = input("Enter the path of your json file:")
+      saveTabs(file_path)
+    elif choice == 8:
+      importTabs(tabs)
+    elif choice != 9:
+      print("Invalid Input")
+
+    display_Menu()
+    choice = int(input("Enter your choice: "))
+
+  print("Exiting the program")
+
+
+main()
