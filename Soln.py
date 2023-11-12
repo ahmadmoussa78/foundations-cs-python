@@ -91,7 +91,9 @@ def openNestedTab(tabs):# worst case =>O(1)
   print("All tabs have been cleared")
   return tabs
 def saveTabs(file_path):# worst case =>O(n),Where n is the total number of tabs in the list
-
+json_string = json.dumps(tabs, indent=2)
+  with open(file_path, "w") as f:
+    f.write(json_string)
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
