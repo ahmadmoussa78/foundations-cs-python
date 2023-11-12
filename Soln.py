@@ -90,6 +90,8 @@ def openNestedTab(tabs):# worst case =>O(1)
       tabs.clear()
   print("All tabs have been cleared")
   return tabs
+def saveTabs(file_path):
+
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
