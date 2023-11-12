@@ -5,9 +5,11 @@ import json
 # used more than one refernce
 import requests
 from bs4 import BeautifulSoup
-#https://youtu.be/O6nnVHPjcJU?si=10UGLIZb4pGRWC0A
+
+# https://youtu.be/O6nnVHPjcJU?si=10UGLIZb4pGRWC0A
 middic = {"tabs": []}
 tabs = []
+
 
 def openTab():
   # worst case =>O(1)
@@ -23,16 +25,13 @@ def openTab():
     print("New tab opened successfully")
   else:
     print("Invalid Input")
-    
-def closeTab(i):
-global tabs
-    if tabs:
-      tabs[-1]
-      tabs = tabs[:-1]
-      print(tabs)
-    else:
-      print("There are no opened tabs to close")
-      if i == "":
+
+
+def closeTab(i):  # worst case =>O(N),Where N is the size of tabs list
+  # https://www.w3schools.com/python/python_variables_global.asp
+  # https://youtu.be/4m8gBTTjoMI?si=0BD-wiSdmY9nVLS-(indians==Top)
+  # gloabl is used to declare a variable inside a local scope.This means thats tabs variable will be avaliable in all the functions.
+  if i == "":
     global tabs
     if tabs:
       tabs[-1]
@@ -51,10 +50,12 @@ global tabs
     print(tabs)
   else:
     print("Invalid input.Please enter an valid index")
-    
-def switchTab(num):  # worst case =>O(n),Where N is the size of tabs list
+
+
+def switchTab(num):  # worst case =>O(N),Where N is the size of tabs list
   global tabs
   index = -1 if num == "" else int(num)
+
   if not tabs:
     print("There is no opened tabs to see its content")
   elif 0 <= index < len(tabs):
@@ -64,19 +65,26 @@ def switchTab(num):  # worst case =>O(n),Where N is the size of tabs list
     print(soup.prettify())
   else:
     print("Invalid input")
-    
-def displayAllTabs(tabs, indent=""):# worst case =>O(n),Where N is the total number of tabs in the nested:
- for i in range(len(tabs)):
+
+
+def displayAllTabs(tabs, indent=""):
+  # worst case =>O(N),Where N is the total number of tabs in the nested
+  for i in range(len(tabs)):
     print(indent + "Title:", tabs[i]["title"])
-    displayAllTabs(tabs[i].get("tabs", []), indent + "  ")
-    #https://www.w3schools.com/python/ref_dictionary_get.asp
-#.get method is used to get the value of the  specified key in the dictionary. If the key is not present in the dictionary, it returns
-def openNestedTab(tabs):# worst case =>O(1)
+    displayAllTabs(tabs[i].get("tabs", []), indent + " ")
+
+
+# https://www.w3schools.com/python/ref_dictionary_get.asp
+# .get method is used to get the value of the  specified key.
+
+
+def openNestedTab(tabs):  # worst case =>O(1)
   index = input("Enter the index of the Parent tab: ")
 
   if index == "":
     print("Invalid input")
     return
+
   else:
     nestedtab = {}
     nested_title = input("Enter the title of the nested tab: ")
@@ -87,18 +95,29 @@ def openNestedTab(tabs):# worst case =>O(1)
       tabs[int(index)]["nested_tab"].append(nestedtab)
 
     print("Nested tab opened successfully")
-    def clearAllTabs(tabs):# worst case =>O(1) #Constant
-      tabs.clear()
+
+
+def clearAllTabs(tabs):  # worst case =>O(1) #Constant
+  tabs.clear()
   print("All tabs have been cleared")
   return tabs
-def saveTabs(file_path):# worst case =>O(n),Where n is the total number of tabs in the list
-json_string = json.dumps(tabs, indent=2)
+
+
+def saveTabs(
+    file_path
+):  # worst case =>O(N),Where n is the total number of tabs in the list
+  json_string = json.dumps(tabs, indent=2)
   with open(file_path, "w") as f:
     f.write(json_string)
-    def importTabs(file_path):
+
+
+def importTabs(
+    file_path):  # worst case =>O(N),Where n is length of json data in file
   file_path = input("Enter the path of your json file:")
   with open(file_path, "r") as f:
     json_object = json.loads(f.read())
+
+
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
@@ -111,10 +130,8 @@ def display_Menu():
   print("8. Import Tabs")
   print("9. Exit")
 
+
 def main():
-  # data = {}
-  # with open("data.json", "r") as f:
-  #   data = json.load(f)
   display_Menu()
   choice = int(input("Enter your choice: "))
 
