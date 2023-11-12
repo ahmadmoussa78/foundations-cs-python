@@ -76,6 +76,16 @@ def openNestedTab(tabs):# worst case =>O(1)
   if index == "":
     print("Invalid input")
     return
+  else:
+    nestedtab = {}
+    nested_title = input("Enter the title of the nested tab: ")
+    nested_url = input("Enter the url of the nested tab: ")
+    nestedtab["title"] = nested_title
+    nestedtab["url"] = nested_url
+    if int(index) < len(tabs):
+      tabs[int(index)]["nested_tab"].append(nestedtab)
+
+    print("Nested tab opened successfully")
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
