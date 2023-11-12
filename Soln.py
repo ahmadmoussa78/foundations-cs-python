@@ -48,6 +48,21 @@ def openTab():
   else:
     print("Invalid input.Please enter an valid index")
     
+def switchTab(num, data):  # worst case =>O(n),Where N is the size of tabs list
+  global tabs
+  index = -1 if num == "" else int(num)
+
+  if not tabs:
+    print("There is no opened tabs to see its content")
+  elif 0 <= index < len(tabs):
+    html_url = tabs[index]["url"]
+    req = requests.get(html_url)
+    soup = BeautifulSoup(req.content, "html.parser")
+    print(soup.prettify())
+  else:
+    print("Invalid input")
+
+    
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
