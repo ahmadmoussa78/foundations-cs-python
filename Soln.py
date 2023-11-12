@@ -68,6 +68,8 @@ def displayAllTabs(tabs, indent=""):# worst case =>O(n),Where N is the total num
  for i in range(len(tabs)):
     print(indent + "Title:", tabs[i]["title"])
     displayAllTabs(tabs[i].get("tabs", []), indent + "  ")
+    #https://www.w3schools.com/python/ref_dictionary_get.asp
+#.get method is used to get the value of the  specified key in the dictionary. If the key is not present in the dictionary, it returns
 
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
