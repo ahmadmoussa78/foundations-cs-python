@@ -24,7 +24,13 @@ def openTab():
     print("Invalid Input")
     
 def closeTab(i):
-
+global tabs
+    if tabs:
+      tabs[-1]
+      tabs = tabs[:-1]
+      print(tabs)
+    else:
+      print("There are no opened tabs to close")
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
