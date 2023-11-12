@@ -92,6 +92,18 @@ def displayAllTabs(tabs, indent=""):
   tabs.clear()
   print("All tabs have been cleared")
   return tabs
+
+def saveTabs(
+    file_path
+):  # worst case =>O(n),Where n is the total number of tabs in the list
+  # data_to_save = {"tabs": tabs}
+  # with open("data.json", "w") as f:
+  #   json.dump(data_to_save,f,indent=2)
+  # print("All tabs have been saved")
+  # return tabs
+  json_string = json.dumps(tabs, indent=2)
+  with open(file_path, "w") as f:
+    f.write(json_string)
     
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
