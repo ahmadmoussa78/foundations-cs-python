@@ -47,7 +47,7 @@ def openTab():
     print(tabs)
   else:
     print("Invalid input.Please enter an valid index")
-    
+
 def switchTab(num, data):  # worst case =>O(n),Where N is the size of tabs list
   global tabs
   index = -1 if num == "" else int(num)
@@ -61,7 +61,12 @@ def switchTab(num, data):  # worst case =>O(n),Where N is the size of tabs list
     print(soup.prettify())
   else:
     print("Invalid input")
-
+    
+def displayAllTabs(tabs, indent=""):
+  # worst case =>O(n),Where N is the total number of tabs in the nested
+  for i in range(len(tabs)):
+    print(indent + "Title:", tabs[i]["title"])
+    displayAllTabs(tabs[i].get("tabs", []), indent + "  ")
     
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
