@@ -104,6 +104,9 @@ def saveTabs(
   json_string = json.dumps(tabs, indent=2)
   with open(file_path, "w") as f:
     f.write(json_string)
+
+    def importTabs(tabs):
+     pass
     
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
