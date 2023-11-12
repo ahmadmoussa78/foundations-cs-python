@@ -31,6 +31,25 @@ global tabs
       print(tabs)
     else:
       print("There are no opened tabs to close")
+      if i == "":
+    global tabs
+    if tabs:
+      tabs[-1]
+      tabs = tabs[:-1]
+      print(tabs)
+    else:
+      print("There are no opened tabs to close")
+  elif not i.isdigit():
+    print("Invalid input. Please enter a valid index.")
+  elif len(tabs) == 0:
+    print("There is no opened tabs to close")
+  elif 0 <= int(i) < len(tabs):
+    index_to_remove = int(i)
+    tabs = (tabs[:index_to_remove] + tabs[index_to_remove + 1:])
+    print("The tab at index", i, "has been closed")
+    print(tabs)
+  else:
+    print("Invalid input.Please enter an valid index")
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
