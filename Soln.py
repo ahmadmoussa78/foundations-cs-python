@@ -94,6 +94,10 @@ def saveTabs(file_path):# worst case =>O(n),Where n is the total number of tabs 
 json_string = json.dumps(tabs, indent=2)
   with open(file_path, "w") as f:
     f.write(json_string)
+    def importTabs(file_path):
+  file_path = input("Enter the path of your json file:")
+  with open(file_path, "r") as f:
+    json_object = json.loads(f.read())
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
