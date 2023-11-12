@@ -13,10 +13,11 @@ def openTab():
   # worst case =>O(1)
   title = input("Enter title of the new tab: ")
   url = input("Enter url of the new tab: ")
+
   if title and url:
     new_tab = {}
     new_tab["title"] = title
-    new_tab["title"] = title
+    new_tab["url"] = url
     new_tab["nested_tab"] = []
     tabs.append(new_tab)
     print("New tab opened successfully")
