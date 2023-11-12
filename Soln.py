@@ -64,8 +64,8 @@ def switchTab(num):  # worst case =>O(n),Where N is the size of tabs list
   else:
     print("Invalid input")
     
-def displayAllTabs(tabs, indent=""):
-  
+def displayAllTabs(tabs, indent=""):# worst case =>O(n),Where N is the total number of tabs in the nested:
+
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
