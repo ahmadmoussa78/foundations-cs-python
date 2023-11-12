@@ -103,7 +103,7 @@ def saveTabs(
   # return tabs
   json_string = json.dumps(tabs, indent=2)
   with open(file_path, "w") as f:
-    f.write(file_path)
+    f.write(json_string
 
     def importTabs(tabs):
      pass
