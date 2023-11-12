@@ -91,7 +91,7 @@ def displayAllTabs(tabs, indent=""):
     def clearAllTabs(tabs):  # worst case =>O(1) #Constant
   tabs.clear()
   print("All tabs have been cleared")
-  return tabs
+  
     
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
