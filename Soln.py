@@ -21,9 +21,7 @@ def openTab():
     new_tab["title"] = title
     new_tab["nested_tab"] = []
     tabs.append(new_tab)
-    print("New tab opened successfully")
-  else:
-    print("Invalid Input")
+    
 
   def closeTab(i):  # worst case =>O(n),Where N is the size of tabs list
   #https://www.w3schools.com/python/python_variables_global.asp
