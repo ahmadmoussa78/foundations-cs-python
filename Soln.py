@@ -22,6 +22,8 @@ def openTab():
     print("New tab opened successfully")
   else:
     print("Invalid Input")
+    
+def closeTab(i):
 
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
