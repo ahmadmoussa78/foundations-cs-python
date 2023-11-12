@@ -70,9 +70,7 @@ def displayAllTabs(tabs, indent=""):
     def openNestedTab(tabs):  # worst case =>O(1)
   index = input("Enter the index of the Parent tab: ")
 
-  if index == "":
-    print("Invalid input")
-    return
+  
 
   else:
     nestedtab = {}
