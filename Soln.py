@@ -13,6 +13,7 @@ def openTab():
   # worst case =>O(1)
   title = input("Enter title of the new tab: ")
   url = input("Enter url of the new tab: ")
+  #title
 
   if title and url:
     new_tab = {}
