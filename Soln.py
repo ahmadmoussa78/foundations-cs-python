@@ -71,7 +71,11 @@ def displayAllTabs(tabs, indent=""):# worst case =>O(n),Where N is the total num
     #https://www.w3schools.com/python/ref_dictionary_get.asp
 #.get method is used to get the value of the  specified key in the dictionary. If the key is not present in the dictionary, it returns
 def openNestedTab(tabs):# worst case =>O(1)
-  
+  index = input("Enter the index of the Parent tab: ")
+
+  if index == "":
+    print("Invalid input")
+    return
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
