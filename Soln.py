@@ -63,7 +63,7 @@ def switchTab(num, data):  # worst case =>O(n),Where N is the size of tabs list
     print("Invalid input")
 
 def displayAllTabs(tabs, indent=""):
-  
+  # worst case =>O(n),Where N is the total number of tabs in the nested
   for i in range(len(tabs)):
     print(indent + "Title:", tabs[i]["title"])
     displayAllTabs(tabs[i].get("tabs", []), indent + "  ")
