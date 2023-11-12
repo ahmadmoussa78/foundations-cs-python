@@ -1,3 +1,14 @@
+import json
+# https://youtu.be/9N6a-VLBa2I?si=GBNRa3YhaLPKmKYZ
+# https://youtu.be/-51jxlQaxyA?si=AYUfJNq0UhzdewB4
+# https://youtu.be/-51jxlQaxyA?si=AYUfJNq0UhzdewB4
+# used more than one refernce
+import requests
+from bs4 import BeautifulSoup
+#https://youtu.be/O6nnVHPjcJU?si=10UGLIZb4pGRWC0A
+middic = {"tabs": []}
+tabs = []
+
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
