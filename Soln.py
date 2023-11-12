@@ -49,7 +49,7 @@ def openTab():
     print("Invalid input.Please enter an valid index")
 
 def switchTab(num, data):  # worst case =>O(n),Where N is the size of tabs list
-  global tabs
+  
   index = -1 if num == "" else int(num)
 
   if not tabs:
