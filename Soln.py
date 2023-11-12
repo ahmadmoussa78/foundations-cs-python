@@ -63,6 +63,9 @@ def switchTab(num):  # worst case =>O(n),Where N is the size of tabs list
     print(soup.prettify())
   else:
     print("Invalid input")
+    
+def displayAllTabs(tabs, indent=""):
+  
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
