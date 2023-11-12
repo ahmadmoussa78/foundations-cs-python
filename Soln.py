@@ -50,6 +50,10 @@ global tabs
     print(tabs)
   else:
     print("Invalid input.Please enter an valid index")
+    
+def switchTab(num):  # worst case =>O(n),Where N is the size of tabs list
+  global tabs
+  index = -1 if num == "" else int(num)
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
