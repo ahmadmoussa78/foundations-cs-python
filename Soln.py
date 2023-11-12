@@ -61,12 +61,32 @@ def switchTab(num, data):  # worst case =>O(n),Where N is the size of tabs list
     print(soup.prettify())
   else:
     print("Invalid input")
-    
+
 def displayAllTabs(tabs, indent=""):
   # worst case =>O(n),Where N is the total number of tabs in the nested
   for i in range(len(tabs)):
     print(indent + "Title:", tabs[i]["title"])
     displayAllTabs(tabs[i].get("tabs", []), indent + "  ")
+    def openNestedTab(tabs):  # worst case =>O(1)
+  index = input("Enter the index of the Parent tab: ")
+
+  if index == "":
+    print("Invalid input")
+    return
+
+  else:
+    nestedtab = {}
+    nested_title = input("Enter the title of the nested tab: ")
+    nested_url = input("Enter the url of the nested tab: ")
+    nestedtab["title"] = nested_title
+    nestedtab["url"] = nested_url
+    if int(index) < len(tabs):
+      # tabs[int(index)]["tabs"].append(nestedtab)
+      tabs[int(index)]["nested_tab"].append(nestedtab)
+      # with open("data.json", "w") as json_file:
+      #   json.dump(data, json_file, indent=2)
+
+    print("Nested tab opened successfully")
     
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
