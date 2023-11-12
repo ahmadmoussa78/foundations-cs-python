@@ -86,7 +86,7 @@ def openNestedTab(tabs):# worst case =>O(1)
       tabs[int(index)]["nested_tab"].append(nestedtab)
 
     print("Nested tab opened successfully")
-    def clearAllTabs(tabs):
+    def clearAllTabs(tabs):# worst case =>O(1) #Constant
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
