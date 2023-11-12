@@ -9,6 +9,11 @@ from bs4 import BeautifulSoup
 middic = {"tabs": []}
 tabs = []
 
+def openTab():
+  # worst case =>O(1)
+  title = input("Enter title of the new tab: ")
+  url = input("Enter url of the new tab: ")
+  
 def display_Menu():
   print("Welcome to Advanced Browser Tabs Simulation,\nthe menu:")
   print("1. Open Tab")
