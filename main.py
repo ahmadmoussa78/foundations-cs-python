@@ -78,6 +78,16 @@ def interview_student(self):
           print(f"Interviewing: {student.name}")
       else:
              print("No students in the queue.")
+def display_queue(self):
+      print("Priority Queue:")
+      for student in self.students:
+          print(student)
+      print()
+
+
+def add_vertex(graph, vertex):
+  if vertex not in graph:
+      graph[vertex] = []
 def main():
   name = input("Enter your name: ")
   print(f"Welcome, {name}!")
