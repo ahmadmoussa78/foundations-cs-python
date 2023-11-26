@@ -72,6 +72,12 @@ class PriorityQueue:
       self.students.append(student)
       self.students.sort(key=lambda x: (not x.good_attitude, x.final_grade, x.midterm_grade), reverse=True)
 
+def interview_student(self):
+      if self.students:
+          student = self.students.pop()
+          print(f"Interviewing: {student.name}")
+      else:
+             print("No students in the queue.")
 def main():
   name = input("Enter your name: ")
   print(f"Welcome, {name}!")
