@@ -92,6 +92,18 @@ def main():
   name = input("Enter your name: ")
   print(f"Welcome, {name}!")
 
+def add_edge(graph, vertex1, vertex2):
+  if vertex1 in graph and vertex2 in graph:
+      graph[vertex1].append(vertex2)
+      graph[vertex2].append(vertex1)
+
+def remove_vertex(graph, vertex):
+  if vertex in graph:
+      del graph[vertex]
+      for vertices in graph.values():
+          if vertex in vertices:
+              vertices.remove(vertex)
+
   while True:
     print("\nMain Menu:")
     print("1. Singly Linked List")
