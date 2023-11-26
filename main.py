@@ -103,6 +103,17 @@ def remove_vertex(graph, vertex):
       for vertices in graph.values():
           if vertex in vertices:
               vertices.remove(vertex)
+def remove_edge(graph, vertex1, vertex2):
+  if vertex1 in graph and vertex2 in graph:
+      if vertex2 in graph[vertex1]:
+          graph[vertex1].remove(vertex2)
+          graph[vertex2].remove(vertex1)
+
+def display_vertices_with_degree(graph, degree):
+  print(f"Vertices with a degree of {degree} or more:")
+  for vertex in graph:
+      if len(graph[vertex]) >= degree:
+          print(vertex)
 
   while True:
     print("\nMain Menu:")
