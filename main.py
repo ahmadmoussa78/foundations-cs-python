@@ -39,7 +39,7 @@ def search_and_delete(self, value):
       else:
         prev = current
         current = current
-
+      
 def is_palindrome(s):
   s = s.lower().replace(" ", "")
   stack = []
@@ -54,6 +54,17 @@ def is_palindrome(s):
       return False
 
   return True
+  
+class Student:
+  def __init__(self, name, midterm_grade, final_grade, good_attitude):
+      self.name = name
+      self.midterm_grade = midterm_grade
+      self.final_grade = final_grade
+      self.good_attitude = good_attitude
+
+  def __repr__(self):
+      return f"{self.name}: Midterm Grade - {self.midterm_grade}/100, Final Grade - {self.final_grade}/100, Good Attitude: {self.good_attitude}"
+
 
 def main():
   name = input("Enter your name: ")
