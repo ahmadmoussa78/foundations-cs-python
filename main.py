@@ -25,7 +25,21 @@ def display(self):
       print(current.data, end=" -> ")
       current = current.next
     print("None")
-    
+
+def search_and_delete(self, value):
+    current = self.head
+    prev = None
+    while current:
+      if current.data == value:
+        if prev:
+          prev.next = current.next
+        else:
+          self.head = current.next
+        current = current.next
+      else:
+        prev = current
+        current = curren
+
 def main():
   name = input("Enter your name: ")
   print(f"Welcome, {name}!")
