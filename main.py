@@ -54,7 +54,7 @@ def is_palindrome(s):
       return False
 
   return True
-  
+
 class Student:
   def __init__(self, name, midterm_grade, final_grade, good_attitude):
       self.name = name
@@ -64,7 +64,13 @@ class Student:
 
   def __repr__(self):
       return f"{self.name}: Midterm Grade - {self.midterm_grade}/100, Final Grade - {self.final_grade}/100, Good Attitude: {self.good_attitude}"
+class PriorityQueue:
+  def __init__(self):
+      self.students = []
 
+  def add_student(self, student):
+      self.students.append(student)
+      self.students.sort(key=lambda x: (not x.good_attitude, x.final_grade, x.midterm_grade), reverse=True)
 
 def main():
   name = input("Enter your name: ")
