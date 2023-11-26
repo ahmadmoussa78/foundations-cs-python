@@ -1,12 +1,3 @@
-class Node:
-
-  def __init__(self, data):
-    self.data = data
-    self.next = None
-
-
-
-
 def main():
   name = input("Enter your name: ")
   print(f"Welcome, {name}!")
