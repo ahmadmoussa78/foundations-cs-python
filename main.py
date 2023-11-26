@@ -38,7 +38,22 @@ def search_and_delete(self, value):
         current = current.next
       else:
         prev = current
-        current = curren
+        current = current
+
+def is_palindrome(s):
+  s = s.lower().replace(" ", "")
+  stack = []
+  queue = []
+
+  for char in s:
+    stack.append(char)
+    queue.insert(0, char)
+
+  while stack:
+    if stack.pop() != queue.pop(0):
+      return False
+
+  return True
 
 def main():
   name = input("Enter your name: ")
