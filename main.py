@@ -3,7 +3,7 @@ class Node:
   def __init__(self, data):
     self.data = data
     self.next = None
-    
+
 class SinglyLinkedList:
 
   def __init__(self):
@@ -18,7 +18,14 @@ class SinglyLinkedList:
       while current.next:
         current = current.next
       current.next = new_node
-
+      
+def display(self):
+    current = self.head
+    while current:
+      print(current.data, end=" -> ")
+      current = current.next
+    print("None")
+    
 def main():
   name = input("Enter your name: ")
   print(f"Welcome, {name}!")
